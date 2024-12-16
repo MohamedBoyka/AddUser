@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.adduser.addUser.app.AddUserViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".addUser.app.AddUserFragment">
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txt_input_user_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_70sdp"
+            android:layout_marginStart="@dimen/_25sdp"
+            android:layout_marginEnd="@dimen/_25sdp"
+            android:textSize="@dimen/_12ssp"
+            android:hint="@string/user_name"
+            android:background="@drawable/_custom_selector_edit_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ed_user_name"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="text"
+                android:maxLength="20"
+                android:text="@={viewModel.userNameEditText}"
+                app:onTextChanged="@{viewModel}"
+                android:background="@android:color/transparent"
+ />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txt_input_age"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:textSize="@dimen/_12ssp"
+            android:hint="@string/age"
+            android:background="@drawable/_custom_selector_edit_text"
+            app:layout_constraintStart_toStartOf="@id/txt_input_user_name"
+            app:layout_constraintEnd_toEndOf="@id/txt_input_user_name"
+            app:layout_constraintTop_toBottomOf="@id/txt_input_user_name"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ed_age"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/_custom_selector_edit_text"
+                android:inputType="number"
+                android:maxLength="2"
+                android:text="@={viewModel.ageEditText}"
+                app:onTextChanged="@{viewModel}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txt_input_job_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:background="@drawable/_custom_selector_edit_text"
+            android:textSize="@dimen/_12ssp"
+            android:hint="@string/job_title"
+            app:layout_constraintStart_toStartOf="@id/txt_input_age"
+            app:layout_constraintEnd_toEndOf="@id/txt_input_age"
+            app:layout_constraintTop_toBottomOf="@id/txt_input_age"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ed_job_title"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/_custom_selector_edit_text"
+                android:inputType="text"
+                android:maxLength="20"
+                android:text="@={viewModel.jobTitleEditText}"
+                app:onTextChanged="@{viewModel}"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txt_input_gender"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:textSize="@dimen/_12ssp"
+            android:hint="@string/gender"
+            android:background="@drawable/_custom_selector_edit_text"
+            app:layout_constraintStart_toStartOf="@id/txt_input_job_title"
+            app:layout_constraintEnd_toEndOf="@id/txt_input_job_title"
+            app:layout_constraintTop_toBottomOf="@id/txt_input_job_title"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ed_gender"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/_custom_selector_edit_text"
+                android:inputType="text"
+                android:maxLength="4"
+                android:text="@={viewModel.genderEditText}"
+                app:onTextChanged="@{viewModel}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_save_user"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@{viewModel.isButtonEnabled ? @drawable/_custom_bg_btn : @drawable/_custom_bg_btn_grey}"
+            android:text="@{viewModel.isButtonEnabled ? @string/save_user : @string/please_fill_data}"
+            android:textColor="@color/white"
+            android:onClick="@{() -> viewModel.addUser()}"
+            android:enabled="@{viewModel.isButtonEnabled}"
+            app:layout_constraintStart_toStartOf="@id/txt_input_gender"
+            app:layout_constraintEnd_toEndOf="@id/txt_input_gender"
+            app:layout_constraintTop_toBottomOf="@id/txt_input_gender"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:textAllCaps="false" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+</layout>

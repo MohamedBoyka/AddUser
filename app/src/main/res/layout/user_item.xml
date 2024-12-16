@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="user"
+            type="com.example.adduser.user.domain.entities.UserEntity" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_10sdp"
+        android:background="@drawable/_custom_bg_item_white"
+        android:elevation="0.5dp"
+        android:layout_margin="@dimen/_10sdp"
+        >
+
+
+        <ImageView
+            android:id="@+id/img_user"
+            android:layout_width="@dimen/_70sdp"
+            android:layout_height="@dimen/_90sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:src="@drawable/ic_userr"
+            android:scaleType="fitXY"
+            />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/img_user"
+            app:layout_constraintTop_toTopOf="@id/img_user"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="@dimen/_20sdp"
+            tools:text="Mohamed"
+            android:textColor="@color/black"
+            android:text="@{user.name}"
+            android:textSize="@dimen/_15sdp"
+            android:layout_marginStart="@dimen/_10sdp"/>
+
+
+
+        <TextView
+            android:id="@+id/txt_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/img_user"
+            app:layout_constraintTop_toTopOf="@id/img_user"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="@dimen/_20sdp"
+            tools:text="Mohamed"
+            android:textColor="@color/black"
+            android:text="@{user.name}"
+            android:textSize="@dimen/_15sdp"
+            android:layout_marginStart="@dimen/_10sdp"/>
+
+
+
+        <TextView
+            android:id="@+id/txt_age"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/img_user"
+            app:layout_constraintTop_toBottomOf="@id/txt_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="@dimen/_20sdp"
+            tools:text="Age: 30"
+            android:textColor="@color/color_777373"
+            android:text='@{@string/age + " : " + user.age}'
+            android:textSize="@dimen/_12sdp"
+            android:layout_marginStart="@dimen/_10sdp"/>
+
+
+        <TextView
+            android:id="@+id/txt_job_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/img_user"
+            app:layout_constraintTop_toBottomOf="@id/txt_age"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="@dimen/_20sdp"
+            tools:text="Job Title : Developer"
+            android:textColor="@color/color_777373"
+            android:text='@{@string/job_title + " : " + user.jobTitle}'
+            android:textSize="@dimen/_12sdp"
+            android:layout_marginStart="@dimen/_10sdp"/>
+
+
+        <TextView
+            android:id="@+id/txt_gender"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/img_user"
+            app:layout_constraintTop_toBottomOf="@id/txt_job_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="@dimen/_20sdp"
+            tools:text="Gender: Man"
+            android:textColor="@color/color_777373"
+            android:text='@{@string/gender + " : " + user.gender}'
+            android:textSize="@dimen/_12sdp"
+            android:layout_marginStart="@dimen/_10sdp"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </layout>

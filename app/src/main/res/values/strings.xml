@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">AddUser</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="if_you_wish_to_add_a_name_click_on">If you wish to add a user, click on</string>
+    <string name="oops_the_user_list_is_empty">Oops.. The user list is empty</string>
+    <string name="user_name">User Name </string>
+    <string name="age">Age </string>
+    <string name="job_title">Job Title </string>
+    <string name="gender">Gender </string>
+
+    <string name="validate_user_name">please enter user name</string>
+    <string name="validate_age">please enter age</string>
+    <string name="validate_job_title">please enter job title</string>
+    <string name="validate_gender">please enter gender</string>
+    <string name="save_user">Save User</string>
+    <string name="please_fill_data">Please fill data :(</string>
+</resources>
